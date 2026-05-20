@@ -21,7 +21,7 @@ export default function TopBar({ lang, setLang, fontSize, setFontSize, t }) {
       className="border-b border-gray-300"
       style={{ background: '#eaeaea' }}
     >
-      <div className="flex items-center h-8 overflow-hidden">
+      <div className="flex items-center h-8">
 
         {/* Scrolling marquee — takes all available space */}
         <div className="flex-1 overflow-hidden min-w-0 px-2">
@@ -106,21 +106,24 @@ export default function TopBar({ lang, setLang, fontSize, setFontSize, t }) {
           {/* Help icons */}
           <div className="flex items-center gap-1">
             <button
-              className="w-6 h-6 rounded-full bg-[#2d88cb] text-white flex items-center justify-center hover:bg-[#206ea7] transition-colors flex-shrink-0 shadow-sm"
+              className="w-6 h-6 rounded-full text-white flex items-center justify-center hover:bg-[#206ea7] transition-colors flex-shrink-0 shadow-sm"
+              style={{ backgroundColor: '#2d88cb' }}
               title="Help"
               aria-label="Help"
             >
               <FaQuestion className="w-2.5 h-2.5" />
             </button>
             <button
-              className="w-6 h-6 rounded-full bg-[#f7931e] text-white flex items-center justify-center hover:bg-[#d87d13] transition-colors flex-shrink-0 shadow-sm"
+              className="w-6 h-6 rounded-full text-white flex items-center justify-center hover:bg-[#d87d13] transition-colors flex-shrink-0 shadow-sm"
+              style={{ backgroundColor: '#f7931e' }}
               title="Support Manual"
               aria-label="Support Manual"
             >
               <FaBookOpen className="w-3 h-3" />
             </button>
             <button
-              className="w-6 h-6 rounded-full bg-[#1fa9d6] text-white flex items-center justify-center hover:bg-[#188eb5] transition-colors flex-shrink-0 shadow-sm"
+              className="w-6 h-6 rounded-full text-white flex items-center justify-center hover:bg-[#188eb5] transition-colors flex-shrink-0 shadow-sm"
+              style={{ backgroundColor: '#1fa9d6' }}
               title="Phone Support"
               aria-label="Phone Support"
             >

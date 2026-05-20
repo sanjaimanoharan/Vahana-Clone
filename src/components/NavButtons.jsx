@@ -2,14 +2,14 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
 
-function DropdownMenu({ items, onSelect }) {
+function DropdownMenu({ items, onSelect, align = 'left' }) {
   return (
     <motion.ul
       initial={{ opacity: 0, y: -6 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -6 }}
       transition={{ duration: 0.18 }}
-      className="absolute left-0 top-full mt-1 bg-[#3a3a3a] border border-gray-600 rounded shadow-xl z-50 min-w-[260px]"
+      className={`absolute ${align === 'right' ? 'right-0' : 'left-0'} top-full mt-1 bg-[#3a3a3a] border border-gray-600 rounded shadow-xl z-50 min-w-[260px]`}
       role="menu"
     >
       {items.map((item, i) => (
@@ -116,7 +116,7 @@ export default function NavButtons({ t, onDemoClick }) {
     <nav
       ref={navRef}
       aria-label="Main navigation"
-      className="border-b border-gray-300"
+      className="border-b border-gray-300 relative z-30"
       style={{
         background: 'linear-gradient(180deg, #f0f7ff 0%, #d0e4f5 100%)',
       }}
@@ -170,6 +170,7 @@ export default function NavButtons({ t, onDemoClick }) {
             {openDropdown === 'admin' && (
               <DropdownMenu
                 items={adminItems}
+                align="right"
                 onSelect={() => { setOpenDropdown(null); onDemoClick(); }}
               />
             )}
