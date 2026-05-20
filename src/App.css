@@ -1,0 +1,27 @@
+/* App-level overrides — Tailwind handles most styling */
+
+/* Smooth font-size transitions */
+* {
+  transition: font-size 0.15s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #b0b8c8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8090a8;
+}
+
+/* Prevent text selection on buttons */
+button {
+  user-select: none;
+}
