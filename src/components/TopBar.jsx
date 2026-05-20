@@ -73,33 +73,30 @@ export default function TopBar({ lang, setLang, fontSize, setFontSize, t }) {
           </div>
 
           {/* Font size controls */}
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1">
             <button
-              onClick={() => setFontSize((s) => Math.min(22, s + 2))}
-              className="px-0.5 text-gray-700 hover:text-gray-900 transition-colors font-bold leading-none"
-              style={{ fontSize: 13 }}
-              title="Increase font size"
-              aria-label="Increase font size"
+              onClick={() => setFontSize((s) => Math.max(10, s - 2))}
+              className={`w-6 h-5 rounded flex items-center justify-center text-gray-700 hover:text-gray-900 border transition-all text-[11px] ${fontSize < 14 ? 'bg-gray-300 border-gray-400 font-extrabold' : 'bg-white border-gray-300 font-bold'}`}
+              title="Decrease font size"
+              aria-label="Decrease font size"
             >
-              A<sup>+</sup>
+              A<sup>-</sup>
             </button>
             <button
               onClick={() => setFontSize(14)}
-              className="px-0.5 text-gray-700 hover:text-gray-900 transition-colors font-bold leading-none"
-              style={{ fontSize: 12 }}
+              className={`w-6 h-5 rounded flex items-center justify-center text-gray-700 hover:text-gray-900 border transition-all text-xs ${fontSize === 14 ? 'bg-gray-300 border-gray-400 font-extrabold' : 'bg-white border-gray-300 font-bold'}`}
               title="Default font size"
               aria-label="Default font size"
             >
               A
             </button>
             <button
-              onClick={() => setFontSize((s) => Math.max(12, s - 2))}
-              className="px-0.5 text-gray-700 hover:text-gray-900 transition-colors font-bold leading-none"
-              style={{ fontSize: 11 }}
-              title="Decrease font size"
-              aria-label="Decrease font size"
+              onClick={() => setFontSize((s) => Math.min(18, s + 2))}
+              className={`w-6 h-5 rounded flex items-center justify-center text-gray-700 hover:text-gray-900 border transition-all text-[11px] ${fontSize > 14 ? 'bg-gray-300 border-gray-400 font-extrabold' : 'bg-white border-gray-300 font-bold'}`}
+              title="Increase font size"
+              aria-label="Increase font size"
             >
-              A<sup>-</sup>
+              A<sup>+</sup>
             </button>
           </div>
 

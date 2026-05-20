@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { translations } from './i18n';
 import TopBar from './components/TopBar';
 import HeaderBanner from './components/HeaderBanner';
@@ -13,6 +13,10 @@ export default function App() {
   const [lang, setLang] = useState('en');
   const [fontSize, setFontSize] = useState(14);
   const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.style.fontSize = `${fontSize}px`;
+  }, [fontSize]);
 
   const t = translations[lang];
 
